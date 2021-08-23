@@ -1,11 +1,12 @@
 @import './reset';
 @import './breakpoints';
 @import './variables';
+@import './hamburger';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 *{
     box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
+    font-family: 'Roboto', sans-serif;}
 body{
     background: url(/images/no-text-background.png) no-repeat center center fixed;
     background-size: cover;
@@ -71,6 +72,7 @@ nav{
             white-space: nowrap;
             @include breakpoints(large){
                 padding: 0 1rem;
+                line-height: 28px;
             }
            
         }
@@ -81,52 +83,7 @@ nav{
         
 
     }
-    .hamburger{
-        width: 50%;
-        min-width: 50%;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        cursor: pointer;
-
-        @include breakpoints(medium){
-            display: none;
-        }
-        .bar1, .bar2, .bar3{
-            width: 35px;
-            height: 3px;
-            background-color: white;
-            margin: 3px 0;
-            transition: 0.4s;
-        }
-        .bar1.change{
-            transform: rotate(-45deg) translate(-9px, 6px)
-        }
-        .bar2.change{
-            opacity: 0;
-        }
-        .bar3.change{
-            transform: rotate(45deg) translate(-9px, -6px);
-        }
-    }
-    .visable{
-        display: flex;
-        flex-direction: column;
-        min-width: 100%;
-        width: 100%;
-        background-color: transparent;
-        color: white;
-        border-radius: 8px;
-        text-align: center;
-        padding: 1rem;
-
-        li{
-            padding: 1rem;
-            &:hover{
-                text-decoration: underline;
-            }
-        }
-    }
+    @include hamburger();
 
 }
 
@@ -143,6 +100,7 @@ nav{
         font-size: 2.5rem;
         @include breakpoints(large){
             font-size: 3rem;
+            line-height: 56px;
         }
     }
     p{
@@ -150,6 +108,8 @@ nav{
         padding: 0 0.5rem 4rem;
         @include breakpoints(large){
             font-size: 2.25rem;
+            line-height: 42px;
+
         }
         
     }
