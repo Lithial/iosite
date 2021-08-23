@@ -52,6 +52,8 @@ input {
 
 /*
 Found: https://ian.pvdindustrial.com/blog/mobile-first-scss-media-queries-mixin-20181115/
+This allows you to call @include breakpoints(insert-size-here) and have the breakpoint affect
+everything above that size. Great for responsive design
 */
 * {
   -webkit-box-sizing: border-box;
@@ -62,11 +64,11 @@ Found: https://ian.pvdindustrial.com/blog/mobile-first-scss-media-queries-mixin-
 body {
   background: url(/images/no-text-background.png) no-repeat center center fixed;
   background-size: cover;
-  width: 100%;
 }
 
 nav {
   color: #ffffff;
+  padding: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -75,15 +77,20 @@ nav {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 100%;
-  padding: 2rem;
+  min-width: 0;
 }
 
 @media all and (min-width: 721px) {
   nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    width: 100%;
+    min-width: 0;
     padding: 2rem 4rem;
   }
 }
@@ -107,6 +114,13 @@ nav .row {
 }
 
 nav .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  font-size: 2rem;
   width: 50%;
   min-width: 50%;
 }
@@ -119,17 +133,6 @@ nav .logo {
         -ms-flex-align: center;
             align-items: center;
   }
-}
-
-nav p {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 2rem;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  width: 30%;
 }
 
 nav ul {
@@ -162,18 +165,27 @@ nav ul li {
   list-style: none;
   font-size: 1.5rem;
   white-space: nowrap;
+  line-height: 28px;
 }
 
 @media all and (min-width: 1025px) {
   nav ul li {
     padding: 0 1rem;
-    line-height: 28px;
   }
 }
 
 nav ul .contact {
-  outline: 1px solid white;
-  padding: 0.7rem;
+  border: 1px solid white;
+  padding: 0.5rem;
+}
+
+nav ul .contact:hover {
+  color: gold;
+  border: 1px solid gold;
+  border-radius: 5px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  cursor: pointer;
 }
 
 nav .hamburger {
@@ -285,14 +297,11 @@ nav .visable li:hover {
 
 .content .contact {
   margin: 1.5rem auto;
+  width: 60%;
+  max-width: 300px;
   font-size: 1.75rem;
   border: 1px solid white;
   padding: 0.5rem;
-  width: 60%;
-  cursor: pointer;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-  max-width: 300px;
 }
 
 .content .contact:hover {
@@ -301,5 +310,6 @@ nav .visable li:hover {
   border-radius: 5px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+  cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */

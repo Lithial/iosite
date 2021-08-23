@@ -1,5 +1,7 @@
 /*
 Found: https://ian.pvdindustrial.com/blog/mobile-first-scss-media-queries-mixin-20181115/
+This allows you to call @include breakpoints(insert-size-here) and have the breakpoint affect
+everything above that size. Great for responsive design
 */
 
 @mixin breakpoints($from: none, $to: none, $media: all) {

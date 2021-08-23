@@ -5,129 +5,159 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 *{
+    // box sizing and global font. Always do this
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;}
+    font-family: 'Roboto', sans-serif;
+}
+
+// make sure that the image is full screen and behind all the elements
 body{
     background: url(/images/no-text-background.png) no-repeat center center fixed;
     background-size: cover;
-    width: 100%;
 }
 
+// For all the hover elements like links and buttons
+@mixin common-hover(){
+    &:hover{
+        color: gold;
+        border: 1px solid gold;
+        border-radius: 5px;
+        transition: all 0.3s;
+        cursor: pointer;
+
+    }
+}
+//standard border for important links
+@mixin bordered-item{
+    border: 1px solid white;
+    padding: 0.5rem;
+    //all of these include the hover
+    @include common-hover();
+}
+
+//changes all the flex settings. used in media queries
+//flex direction is row or column
+//width is in percentage of row taken
+//min width is 0 unless required for layout
+@mixin flex($flex-direction, $width, $min-width: 0) {
+    display: flex;
+    flex-direction: $flex-direction;
+    width: $width;
+    min-width: $min-width;
+}
 
 nav{
-    color: #ffffff;
-    display: flex; 
-    flex-direction: column;      
-     width: 100%;
+    //color padding flex
+     color: $primaryLight;
      padding: 2rem;
+     @include flex(column, 100%);
+    
+     //@medium break point switch from columns to rows and add padding
      @include breakpoints(medium){
-       flex-direction: row;
-       padding: 2rem 4rem;
+        @include flex(row, 100%);
+         padding: 2rem 4rem;
      }
+     //I split the header into two rows so the hamburger would render properly
      .row{
-         display: flex;
-         flex-direction: row;
-         width: 100%;
-         min-width: 100%;
+         @include flex(row, 100%, 100%);
          @include breakpoints(medium){
+             //@medium breakpoint the hamburger is display 0
+             //So this becomes the new first and second element
             min-width: 45%;
          }
      }
      
      .logo{
+         //force width 50% so the hamburger sits right
+        display: flex;
+        justify-content: flex-start;
+        font-size: 2rem;
         width: 50%;
         min-width: 50%;
         @include breakpoints(medium){
+            //@medium the hamburger is irrelevant so fill up your container
             width: 100%;
             min-width: 100%;
             align-items: center;
          }
 
      }
-
-    p{
-        display: flex;
-        font-size: 2rem;
-        justify-content: flex-start;
-        width: 30%;
-    }
-
+    //nav list, starts as display none.
     ul{
         display: none;
         width: 0;
+        //@medium it comes back and into its proper place as the hamburger disappears
         @include breakpoints(medium){
-            display: flex;
-            flex-direction: row;
-            width: 100%;
-            min-width: 100%;
+            @include flex(row, 100%, 100%);
             justify-content: flex-end;
             align-items: center;
          }
       
+        //stardard list formatting. remove the dots, change the fontsize etc
         li{
             margin: 0 1.5rem;
-          
             list-style: none;
             font-size: 1.5rem;
             white-space: nowrap;
+            line-height: 28px;
+            //@large add some padding
             @include breakpoints(large){
                 padding: 0 1rem;
-                line-height: 28px;
             }
            
         }
+        //this is the class for the end item to make it bordered etc
         .contact{
-            outline: 1px solid white;
-            padding: 0.7rem;
+            @include bordered-item();
         }
         
 
     }
+    //the code for the hamburger icon
     @include hamburger();
 
 }
 
+//format and center content
 .content{
     color: white;
     text-align: center;
     width: 90%;
     margin: auto;
+    //mandatory width shrinking as the window gets bigger
     @include breakpoints(large){
         width: 70%;
     }
+    //header padding and font
     h1{
         padding: 8rem 0 5rem;
         font-size: 2.5rem;
+        //make font bigger on larger screens
         @include breakpoints(large){
             font-size: 3rem;
             line-height: 56px;
         }
     }
+    //content padding and font
     p{
         font-size: 2rem;
         padding: 0 0.5rem 4rem;
+        //make font bigger on larger screens
         @include breakpoints(large){
             font-size: 2.25rem;
             line-height: 42px;
-
         }
         
     }
+    //contact button formatting and font followed by border function
     .contact{
         margin: 1.5rem auto;
-        font-size: 1.75rem;
-        border: 1px solid white;
-        padding: 0.5rem;
         width: 60%;
-        cursor: pointer;
-        transition: 0.4s;
         max-width: 300px;
-        &:hover{
-            color: gold;
-            border: 1px solid gold;
-            border-radius: 5px;
-            transition: all 0.3s;
-        }
-
+        font-size: 1.75rem;
+       
+        @include bordered-item();
     }
 }
+
+

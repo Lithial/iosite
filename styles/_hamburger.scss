@@ -1,15 +1,22 @@
+//function for the responsive hamburger because im sick of digging for it in projects
 @mixin hamburger(){
+    
     .hamburger{
+        //set flex settings for half the bar
         width: 50%;
         min-width: 50%;
         display: flex;
         flex-direction: column;
+        //align items at the end
         align-items: flex-end;
+        //add the pointer for hover
         cursor: pointer;
 
+        //@medium it goes away, replaced by normal sized nav
         @include breakpoints(medium){
             display: none;
         }
+        //this icon is made of 3 bars. You can change there color here
         .bar1, .bar2, .bar3{
             width: 35px;
             height: 3px;
@@ -17,6 +24,7 @@
             margin: 3px 0;
             transition: 0.4s;
         }
+        //this section handles the rotate on click of the icon animation
         .bar1.change{
             transform: rotate(-45deg) translate(-9px, 6px)
         }
@@ -27,6 +35,7 @@
             transform: rotate(45deg) translate(-9px, -6px);
         }
     }
+    //when the icon is clicked, the items inside are made visable. then this happens
     .visable{
         display: flex;
         flex-direction: column;
