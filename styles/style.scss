@@ -1,0 +1,173 @@
+@import './reset';
+@import './breakpoints';
+@import './variables';
+
+*{
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+body{
+    background: url(/images/no-text-background.png) no-repeat center center fixed;
+    background-size: cover;
+    width: 100%;
+}
+
+
+nav{
+    color: #ffffff;
+    display: flex; 
+    flex-direction: column;      
+     width: 100%;
+     padding: 2rem;
+     @include breakpoints(medium){
+       flex-direction: row;
+       padding: 2rem 1rem;
+     }
+     .row{
+         display: flex;
+         flex-direction: row;
+         width: 100%;
+         min-width: 100%;
+         @include breakpoints(medium){
+            min-width: 45%;
+         }
+     }
+     
+     .logo{
+        width: 50%;
+        min-width: 50%;
+        @include breakpoints(medium){
+            width: 100%;
+            min-width: 100%;
+            align-items: center;
+         }
+
+     }
+
+    p{
+        display: flex;
+        font-size: 2rem;
+        justify-content: flex-start;
+        width: 30%;
+    }
+
+    ul{
+        display: none;
+        width: 0;
+        @include breakpoints(medium){
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            min-width: 100%;
+            justify-content: flex-end;
+            align-items: center;
+         }
+      
+        li{
+            margin: 0 1.5rem;
+          
+            list-style: none;
+            font-size: 1.5rem;
+            white-space: nowrap;
+            @include breakpoints(large){
+                padding: 0 1rem;
+            }
+           
+        }
+        .contact{
+            outline: 1px solid white;
+            padding: 0.7rem;
+        }
+        
+
+    }
+    .hamburger{
+        width: 50%;
+        min-width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        cursor: pointer;
+
+        @include breakpoints(medium){
+            display: none;
+        }
+        .bar1, .bar2, .bar3{
+            width: 35px;
+            height: 3px;
+            background-color: white;
+            margin: 3px 0;
+            transition: 0.4s;
+        }
+        .bar1.change{
+            transform: rotate(-45deg) translate(-9px, 6px)
+        }
+        .bar2.change{
+            opacity: 0;
+        }
+        .bar3.change{
+            transform: rotate(45deg) translate(-9px, -6px);
+        }
+    }
+    .visable{
+        display: flex;
+        flex-direction: column;
+        min-width: 100%;
+        width: 100%;
+        background-color: transparent;
+        color: white;
+        border-radius: 8px;
+        text-align: center;
+        padding: 1rem;
+
+        li{
+            padding: 1rem;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+
+}
+
+.content{
+    color: white;
+    text-align: center;
+    width: 90%;
+    margin: auto;
+    @include breakpoints(large){
+        width: 70%;
+    }
+    h1{
+        padding: 8rem 0 5rem;
+        font-size: 2.5rem;
+        @include breakpoints(large){
+            font-size: 3rem;
+        }
+    }
+    p{
+        font-size: 2rem;
+        padding: 0 0.5rem 4rem;
+        @include breakpoints(large){
+            font-size: 2.25rem;
+        }
+        
+    }
+    .contact{
+        margin: 1.5rem auto;
+        font-size: 1.75rem;
+        border: 1px solid white;
+        padding: 0.5rem;
+        width: 60%;
+        cursor: pointer;
+        transition: 0.4s;
+        max-width: 300px;
+        &:hover{
+            color: gold;
+            border: 1px solid gold;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+    }
+}
