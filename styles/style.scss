@@ -17,10 +17,10 @@ body{
 }
 
 // For all the hover elements like links and buttons
-@mixin common-hover(){
+@mixin common-hover($border-size: 1px){
     &:hover{
         color: gold;
-        border: 1px solid gold;
+        border: $border-size solid gold;
         border-radius: 5px;
         transition: all 0.3s;
         cursor: pointer;
@@ -100,6 +100,7 @@ nav{
             font-size: 1.5rem;
             white-space: nowrap;
             line-height: 28px;
+            @include common-hover(0);
             //@large add some padding
             @include breakpoints(large){
                 padding: 0 1rem;

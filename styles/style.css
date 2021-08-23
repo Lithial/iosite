@@ -168,6 +168,15 @@ nav ul li {
   line-height: 28px;
 }
 
+nav ul li:hover {
+  color: gold;
+  border: 0 solid gold;
+  border-radius: 5px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
 @media all and (min-width: 1025px) {
   nav ul li {
     padding: 0 1rem;
