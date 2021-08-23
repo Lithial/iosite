@@ -83,7 +83,7 @@ nav {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    padding: 2rem 1rem;
+    padding: 2rem 4rem;
   }
 }
 

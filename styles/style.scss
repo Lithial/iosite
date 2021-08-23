@@ -21,7 +21,7 @@ nav{
      padding: 2rem;
      @include breakpoints(medium){
        flex-direction: row;
-       padding: 2rem 1rem;
+       padding: 2rem 4rem;
      }
      .row{
          display: flex;
