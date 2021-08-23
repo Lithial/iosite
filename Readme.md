@@ -8,3 +8,6 @@ fix the scss mess I made with functions an variables if needed.
 work out how to scale the font using mix and max and clamp.
 add hovers to all of the links.
 and active state to tabs.
+
+
+background image original here: https://unsplash.com/photos/v9FIx0J-KAA
