@@ -62,7 +62,7 @@ everything above that size. Great for responsive design
 }
 
 body {
-  background: url(/images/no-text-background.png) no-repeat center center fixed;
+  background: url(/images/no-text-background.jpg) no-repeat center center fixed;
   background-size: cover;
   height: 100%;
 }
@@ -144,7 +144,7 @@ nav .logo a {
 nav .logo a:hover {
   color: gold;
   border: 0 solid gold;
-  border-radius: 5px;
+  border-radius: 8px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   cursor: pointer;
@@ -183,35 +183,36 @@ nav ul li {
   line-height: 28px;
 }
 
-nav ul li a {
-  text-decoration: none;
-  color: white;
-}
-
-nav ul li a:hover {
-  color: gold;
-  border: 0 solid gold;
-  border-radius: 5px;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  cursor: pointer;
-}
-
 @media all and (min-width: 1025px) {
   nav ul li {
     padding: 0 1rem;
   }
 }
 
+nav ul a {
+  text-decoration: none;
+  color: white;
+}
+
+nav ul a:hover {
+  color: gold;
+  border: 0 solid gold;
+  border-radius: 8px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
 nav ul .contact {
   border: 1px solid white;
+  border-radius: 8px;
   padding: 0.5rem;
 }
 
 nav ul .contact:hover {
   color: gold;
   border: 1px solid gold;
-  border-radius: 5px;
+  border-radius: 8px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   cursor: pointer;
@@ -283,10 +284,6 @@ nav .visable li {
   padding: 1rem;
 }
 
-nav .visable li:hover {
-  text-decoration: underline;
-}
-
 .active {
   color: gold;
 }
@@ -321,11 +318,30 @@ nav .visable li:hover {
   padding: 0 0.5rem 4rem;
 }
 
+.content p a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
 @media all and (min-width: 1025px) {
   .content p {
     font-size: 2.25rem;
     line-height: 42px;
   }
+}
+
+.content a {
+  text-decoration: none;
+  color: white;
+}
+
+.content a:hover {
+  color: gold;
+  border: 0 solid gold;
+  border-radius: 8px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  cursor: pointer;
 }
 
 .content .contact {
@@ -334,16 +350,136 @@ nav .visable li:hover {
   max-width: 300px;
   font-size: 1.75rem;
   border: 1px solid white;
+  border-radius: 8px;
   padding: 0.5rem;
 }
 
 .content .contact:hover {
   color: gold;
   border: 1px solid gold;
-  border-radius: 5px;
+  border-radius: 8px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   cursor: pointer;
+}
+
+.service-content {
+  background-color: #ffffff;
+  min-height: 100vh;
+}
+
+@media all and (min-width: 1025px) {
+  .service-content {
+    min-height: 88vh;
+  }
+}
+
+.service-content h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  padding: 8rem 1rem 0rem;
+}
+
+.service-content h2 {
+  font-size: 2rem;
+  line-height: 42px;
+  text-align: center;
+  padding: 1rem 1rem;
+  width: 60%;
+  margin: auto;
+  margin-top: 2rem;
+}
+
+.service-content hr {
+  height: 20px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background-color: white;
+}
+
+.service-content .contact {
+  border: 1px solid #15294A;
+  border-radius: 8px;
+  max-width: 300px;
+}
+
+.service-content .contact:hover {
+  color: gold;
+  border: 1px solid gold;
+  border-radius: 8px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.service-content .services {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media all and (min-width: 721px) {
+  .service-content .services {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    padding: 2rem 4rem 2rem;
+    margin: 0 3rem;
+  }
+}
+
+@media all and (min-width: 1025px) {
+  .service-content .services {
+    margin: 0 auto;
+    max-width: 80%;
+  }
+}
+
+@media all and (min-width: 1601px) {
+  .service-content .services {
+    margin: 0 auto;
+    max-width: 70%;
+  }
+}
+
+.service-content .services .service {
+  max-width: 300px;
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 3rem 0 1rem;
+}
+
+.service-content .services .service h2 {
+  font-size: 2rem;
+  line-height: 42px;
+  text-align: center;
+  padding: 1rem 1rem;
+  width: 60%;
+  margin: auto;
+  color: #15294A;
+  text-decoration: underline;
+}
+
+.service-content .services .service ul {
+  font-size: 1.5rem;
+  line-height: 24px;
+  margin: auto;
+  width: 100%;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.service-content .services .service ul li {
+  padding: 0.25rem 0;
 }
 
 .about-us {
@@ -397,8 +533,8 @@ nav .visable li:hover {
 }
 
 .about-us .person {
-  max-width: 200px;
-  width: 200px;
+  max-width: 232px;
+  width: 232px;
   margin: auto;
   text-align: center;
   padding: 3rem 0 1rem;
