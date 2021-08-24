@@ -64,6 +64,7 @@ everything above that size. Great for responsive design
 body {
   background: url(/images/no-text-background.png) no-repeat center center fixed;
   background-size: cover;
+  height: 100%;
 }
 
 nav {
@@ -135,6 +136,20 @@ nav .logo {
   }
 }
 
+nav .logo a {
+  text-decoration: none;
+  color: white;
+}
+
+nav .logo a:hover {
+  color: gold;
+  border: 0 solid gold;
+  border-radius: 5px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
 nav ul {
   display: none;
   width: 0;
@@ -168,7 +183,12 @@ nav ul li {
   line-height: 28px;
 }
 
-nav ul li:hover {
+nav ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+nav ul li a:hover {
   color: gold;
   border: 0 solid gold;
   border-radius: 5px;
@@ -267,6 +287,10 @@ nav .visable li:hover {
   text-decoration: underline;
 }
 
+.active {
+  color: gold;
+}
+
 .content {
   color: white;
   text-align: center;
@@ -320,5 +344,105 @@ nav .visable li:hover {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   cursor: pointer;
+}
+
+.about-us {
+  background-color: #ffffff;
+  min-height: 100vh;
+}
+
+@media all and (min-width: 1025px) {
+  .about-us {
+    min-height: 90vh;
+  }
+}
+
+.about-us .people {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media all and (min-width: 721px) {
+  .about-us .people {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    padding: 4rem;
+    margin: 0 3rem;
+  }
+}
+
+@media all and (min-width: 1025px) {
+  .about-us .people {
+    padding: 4rem;
+    margin: 0 auto;
+    max-width: 80%;
+  }
+}
+
+@media all and (min-width: 1601px) {
+  .about-us .people {
+    padding: 4rem;
+    margin: 0 auto;
+    max-width: 70%;
+  }
+}
+
+.about-us .person {
+  max-width: 200px;
+  width: 200px;
+  margin: auto;
+  text-align: center;
+  padding: 3rem 0 1rem;
+}
+
+.about-us .person img {
+  border-radius: 50%;
+  width: 202px;
+}
+
+.about-us .person h2 {
+  font-size: 2.25rem;
+}
+
+.about-us .person h3 {
+  font-size: 2rem;
+}
+
+.about-us p {
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  text-align: center;
+  padding: 0 1rem 3rem;
+}
+
+@media all and (min-width: 721px) {
+  .about-us p {
+    margin: 0 auto;
+    max-width: 90%;
+  }
+}
+
+@media all and (min-width: 1025px) {
+  .about-us p {
+    margin: 0 auto;
+    max-width: 80%;
+    padding: 0 1rem 3rem;
+  }
+}
+
+@media all and (min-width: 1601px) {
+  .about-us p {
+    margin: 0 auto;
+    max-width: 70%;
+  }
 }
 /*# sourceMappingURL=style.css.map */

@@ -14,6 +14,7 @@
 body{
     background: url(/images/no-text-background.png) no-repeat center center fixed;
     background-size: cover;
+    height: 100%;
 }
 
 // For all the hover elements like links and buttons
@@ -80,6 +81,11 @@ nav{
             min-width: 100%;
             align-items: center;
          }
+         a{
+            text-decoration: none;
+            color: white;
+            @include common-hover(0);
+        }
 
      }
     //nav list, starts as display none.
@@ -100,7 +106,11 @@ nav{
             font-size: 1.5rem;
             white-space: nowrap;
             line-height: 28px;
-            @include common-hover(0);
+            a{
+                text-decoration: none;
+                color: white;
+                @include common-hover(0);
+            }
             //@large add some padding
             @include breakpoints(large){
                 padding: 0 1rem;
@@ -117,6 +127,10 @@ nav{
     //the code for the hamburger icon
     @include hamburger();
 
+}
+
+.active{
+    color: gold;
 }
 
 //format and center content
@@ -161,4 +175,71 @@ nav{
     }
 }
 
+  
+.about-us{
+    background-color: $primaryLight;
+    min-height: 100vh;
+    @include breakpoints(large){
+        min-height: 90vh;
 
+    }
+    .people{
+        display: flex;
+        flex-direction: column;
+        @include breakpoints(medium){
+            flex-wrap: wrap;
+            flex-direction: row;
+            padding: 4rem;
+            margin: 0 3rem;
+        }
+        @include breakpoints(large){
+            padding: 4rem;
+            margin: 0 auto;
+            max-width: 80%;
+        }
+        @include breakpoints(x-large){
+            padding: 4rem;
+            margin: 0 auto;
+            max-width: 70%;
+        }
+    }
+    .person{
+        max-width: 200px;
+        width: 200px;
+        margin: auto;
+        text-align: center;
+        padding: 3rem 0 1rem;
+        @include breakpoints(medium){
+        }
+        img{
+            border-radius: 50%;
+            width: 202px;
+        }
+        h2{
+            font-size: 2.25rem;
+        }
+        h3{
+            font-size: 2rem;
+        }
+    }
+    p{
+        font-size: 1.5rem;
+        line-height: 1.75rem;
+        text-align: center;
+        padding: 0 1rem 3rem;
+    
+        @include breakpoints(medium){
+            margin: 0 auto;
+            max-width: 90%;
+        }
+        @include breakpoints(large){
+            margin: 0 auto;
+            max-width: 80%;
+            padding: 0 1rem 3rem;
+        }
+        @include breakpoints(x-large){
+            margin: 0 auto;
+            max-width: 70%;
+        }
+    }
+}
