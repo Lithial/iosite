@@ -59,6 +59,10 @@ nav{
         @include flex(row, 100%);
          padding: 2rem 4rem;
      }
+    //@lage break point switch from columns to rows and add padding
+    @include breakpoints(x-large){
+        padding: 4rem 8rem;
+    }
      //I split the header into two rows so the hamburger would render properly
      .row{
          @include flex(row, 100%, 100%);
@@ -81,6 +85,14 @@ nav{
             width: 100%;
             min-width: 100%;
             align-items: center;
+         }
+         @include breakpoints(x-large){
+            //@medium the hamburger is irrelevant so fill up your container
+            font-size: 4rem;
+         }
+         @include breakpoints(xx-large){
+            //@medium the hamburger is irrelevant so fill up your container
+            font-size: 4rem;
          }
          a{
             text-decoration: none;
@@ -111,6 +123,14 @@ nav{
             //@large add some padding
             @include breakpoints(large){
                 padding: 0 1rem;
+            }
+            //@large add some padding
+            @include breakpoints(x-large){
+                font-size: 2.5rem;
+            }
+            //@large add some padding
+            @include breakpoints(xx-large){
+                font-size: 3rem;
             }
            
         }
@@ -145,6 +165,12 @@ nav{
     @include breakpoints(large){
         width: 70%;
     }
+
+    //mandatory width shrinking as the window gets bigger
+    @include breakpoints(xx-large){
+        width: 40%;
+        padding-top: 18vh;
+    }
     //header padding and font
     h1{
         padding: 8rem 0 5rem;
@@ -153,6 +179,11 @@ nav{
         @include breakpoints(large){
             font-size: 3rem;
             line-height: 56px;
+        }
+        //make font bigger on larger screens
+        @include breakpoints(xx-large){
+            font-size: 6rem;
+            line-height: 90px;
         }
     }
     //content padding and font
@@ -168,7 +199,11 @@ nav{
             font-size: 2.25rem;
             line-height: 42px;
         }
-        
+        //make font bigger on larger screens
+        @include breakpoints(large){
+            font-size: 4.25rem;
+            line-height: 60px;
+        }
     }
     //contact button formatting and font followed by border function
     a{
@@ -181,7 +216,10 @@ nav{
         width: 60%;
         max-width: 300px;
         font-size: 1.75rem;
-       
+        
+        @include breakpoints(xx-large){
+            font-size: 3.25rem;
+        }
         @include bordered-item();
     }
 
@@ -190,25 +228,41 @@ nav{
 // Services Code
 
 .service-content{
-    background-color: $primaryLight;
+    // background-color: rgba($primaryLight,0.6);
+    color: $primaryLight;
     min-height: 100vh;
+    //mandatory width shrinking as the window gets bigger
     @include breakpoints(large){
-        min-height: 88vh;
+        width: 70%;
+        margin: auto;
+
     }
 
+    //mandatory width shrinking as the window gets bigger
+    @include breakpoints(xx-large){
+        width: 70%;
+        margin: auto;
+        padding-top: 10vh;
+    }
     h1{
         font-size: 2.5rem;
         text-align: center;
-        padding: 8rem 1rem 0rem;
+        padding: 6rem 1rem 0rem;
+        //mandatory width shrinking as the window gets bigger
+        @include breakpoints(xx-large){
+            font-size: 6rem;
+            padding: 2rem 1rem 2rem;
+        }
     }
     h2{
-            font-size: 2rem;
-            line-height: 42px;
-            text-align: center;
-            padding: 1rem 1rem;
-            width: 60%;
-            margin: auto;  
-            margin-top: 2rem;   
+        font-size: 2rem;
+        line-height: 42px;
+        text-align: center;
+        padding: 1rem 1rem;
+        width: 60%;
+        margin: auto;  
+        margin-top: 2rem;
+   
     }
     hr{
         height: 20px;
@@ -219,9 +273,15 @@ nav{
     }
     .contact{
         @include common-hover();
-        border: 1px solid $primaryMiddle;
+        border: 1px solid $primaryLight;
         border-radius: 8px;
         max-width: 300px;
+        margin-bottom: 2rem;
+        //mandatory width shrinking as the window gets bigger
+        @include breakpoints(xx-large){
+            font-size: 4rem;
+            max-width: 600px;
+        } 
     }
 
     .services{
@@ -249,6 +309,10 @@ nav{
             margin: 0 auto;
             text-align: center;
             padding: 3rem 0 1rem;
+            @include breakpoints(xx-large){
+                max-width: 400px;
+                width: 400px;
+            }
             h2{
                 font-size: 2rem;
                 line-height: 42px;
@@ -256,8 +320,13 @@ nav{
                 padding: 1rem 1rem;
                 width: 60%;
                 margin: auto;
-                color: $primaryMiddle;
+                // color: $primaryMiddle;
                 text-decoration: underline;
+                @include breakpoints(xx-large){
+                    font-size: 4.5rem;
+                    line-height: 70px;
+                    width: 80%;
+                }
 
             }
             ul{
@@ -267,6 +336,10 @@ nav{
                 width: 100%;
                 padding: 0 1rem;
                 text-align: center;
+                @include breakpoints(xx-large){
+                    font-size: 3rem;
+                    line-height: 56px;
+                }
                 li{
                     padding: 0.25rem 0;
                 }
@@ -278,11 +351,20 @@ nav{
 
 //About Us Code
 .about-us{
-    background-color: $primaryLight;
+    color: $primaryLight;
     min-height: 100vh;
-    @include breakpoints(large){
-        min-height: 90vh;
-
+    display: flex;
+    flex-direction: column;
+    h2{
+        font-size: 2.5rem;
+        margin: 0 auto;
+        padding-top: 1rem;
+        @include breakpoints(x-large){
+            font-size: 4rem;
+        }
+        @include breakpoints(xx-large){
+            font-size: 5rem;
+        }
     }
     .people{
         display: flex;
@@ -290,7 +372,7 @@ nav{
         @include breakpoints(medium){
             flex-wrap: wrap;
             flex-direction: row;
-            padding: 4rem;
+            padding: 1rem 0;
             margin: 0 3rem;
         }
         @include breakpoints(large){
@@ -303,6 +385,10 @@ nav{
             margin: 0 auto;
             max-width: 70%;
         }
+        @include breakpoints(xx-large){
+            padding: 6rem;
+            width: 70%;
+        }
     }
     .person{
         max-width: 232px;
@@ -310,17 +396,35 @@ nav{
         margin: auto;
         text-align: center;
         padding: 3rem 0 1rem;
-        @include breakpoints(medium){
+        @include breakpoints(xx-large){
+            max-width: 464px;
+            width: 464px;
         }
         img{
             border-radius: 50%;
             width: 202px;
+            @include breakpoints(xx-large){
+                max-width: 404px;
+                width: 404px;
+            }
         }
         h2{
             font-size: 2.25rem;
+            @include breakpoints(x-large){
+                font-size: 4rem;
+            }
+            @include breakpoints(xx-large){
+                font-size: 4.5rem;
+            }
         }
         h3{
             font-size: 2rem;
+            @include breakpoints(x-large){
+                font-size: 3rem;
+            }
+            @include breakpoints(xx-large){
+                font-size: 4rem;
+            }
         }
     }
     p{
@@ -339,8 +443,15 @@ nav{
             padding: 0 1rem 3rem;
         }
         @include breakpoints(x-large){
+            font-size: 2.5rem;
+            line-height: 50px;
             margin: 0 auto;
             max-width: 70%;
+        }
+        @include breakpoints(xx-large){
+            font-size: 3.5rem;
+            line-height: 50px;
+            max-width: 50%;
         }
     }
 }
