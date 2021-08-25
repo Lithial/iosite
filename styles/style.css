@@ -96,12 +96,6 @@ nav {
   }
 }
 
-@media all and (min-width: 1601px) {
-  nav {
-    padding: 4rem 8rem;
-  }
-}
-
 nav .row {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -142,7 +136,7 @@ nav .logo {
   }
 }
 
-@media all and (min-width: 1601px) {
+@media all and (min-width: 1941px) {
   nav .logo {
     font-size: 4rem;
   }
@@ -207,7 +201,7 @@ nav ul li {
   }
 }
 
-@media all and (min-width: 1601px) {
+@media all and (min-width: 1941px) {
   nav ul li {
     font-size: 2.5rem;
   }
@@ -524,7 +518,7 @@ nav .visable li {
   }
 }
 
-@media all and (min-width: 1601px) {
+@media all and (min-width: 1941px) {
   .service-content .services {
     margin: 0 auto;
     max-width: 70%;
@@ -602,9 +596,9 @@ nav .visable li {
   padding-top: 1rem;
 }
 
-@media all and (min-width: 1601px) {
+@media all and (min-width: 1941px) {
   .about-us h2 {
-    font-size: 4rem;
+    font-size: 3rem;
   }
 }
 
@@ -645,7 +639,7 @@ nav .visable li {
   }
 }
 
-@media all and (min-width: 1601px) {
+@media all and (min-width: 1941px) {
   .about-us .people {
     padding: 4rem;
     margin: 0 auto;
@@ -691,7 +685,7 @@ nav .visable li {
   font-size: 2.25rem;
 }
 
-@media all and (min-width: 1601px) {
+@media all and (min-width: 1941px) {
   .about-us .person h2 {
     font-size: 4rem;
   }
@@ -707,7 +701,7 @@ nav .visable li {
   font-size: 2rem;
 }
 
-@media all and (min-width: 1601px) {
+@media all and (min-width: 1941px) {
   .about-us .person h3 {
     font-size: 3rem;
   }
@@ -741,7 +735,7 @@ nav .visable li {
   }
 }
 
-@media all and (min-width: 1601px) {
+@media all and (min-width: 1941px) {
   .about-us p {
     font-size: 2.5rem;
     line-height: 50px;

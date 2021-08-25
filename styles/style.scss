@@ -60,9 +60,9 @@ nav{
          padding: 2rem 4rem;
      }
     //@lage break point switch from columns to rows and add padding
-    @include breakpoints(x-large){
-        padding: 4rem 8rem;
-    }
+    // @include breakpoints(x-large){
+    //     padding: 4rem 8rem;
+    // }
      //I split the header into two rows so the hamburger would render properly
      .row{
          @include flex(row, 100%, 100%);
@@ -360,7 +360,7 @@ nav{
         margin: 0 auto;
         padding-top: 1rem;
         @include breakpoints(x-large){
-            font-size: 4rem;
+            font-size: 3rem;
         }
         @include breakpoints(xx-large){
             font-size: 5rem;
