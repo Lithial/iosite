@@ -62,7 +62,7 @@ everything above that size. Great for responsive design
 }
 
 body {
-  background: url(/images/no-text-background.jpg) no-repeat center center fixed;
+  background: url(/iosite/images/no-text-background.jpg) no-repeat center center fixed;
   background-size: cover;
   height: 100%;
 }
