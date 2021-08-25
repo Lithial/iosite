@@ -177,12 +177,12 @@ nav{
         font-size: 2.5rem;
         //make font bigger on larger screens
         @include breakpoints(large){
-            font-size: 3rem;
+            font-size: 2.5rem;
             line-height: 56px;
         }
         //make font bigger on larger screens
         @include breakpoints(xx-large){
-            font-size: 6rem;
+            font-size: 5rem;
             line-height: 90px;
         }
     }
@@ -200,7 +200,7 @@ nav{
             line-height: 42px;
         }
         //make font bigger on larger screens
-        @include breakpoints(large){
+        @include breakpoints(xx-large){
             font-size: 4.25rem;
             line-height: 60px;
         }
@@ -295,11 +295,9 @@ nav{
         }
         @include breakpoints(large){
             margin: 0 auto;
-            max-width: 80%;
         }
         @include breakpoints(x-large){
             margin: 0 auto;
-            max-width: 70%;
         }
 
       
@@ -352,7 +350,6 @@ nav{
 //About Us Code
 .about-us{
     color: $primaryLight;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     h2{
@@ -440,7 +437,7 @@ nav{
         @include breakpoints(large){
             margin: 0 auto;
             max-width: 80%;
-            padding: 0 1rem 3rem;
+            padding: 0 1rem 1rem;
         }
         @include breakpoints(x-large){
             font-size: 2.5rem;

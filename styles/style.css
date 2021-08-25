@@ -339,14 +339,14 @@ nav .visable li {
 
 @media all and (min-width: 1025px) {
   .content h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     line-height: 56px;
   }
 }
 
 @media all and (min-width: 2801px) {
   .content h1 {
-    font-size: 6rem;
+    font-size: 5rem;
     line-height: 90px;
   }
 }
@@ -368,7 +368,7 @@ nav .visable li {
   }
 }
 
-@media all and (min-width: 1025px) {
+@media all and (min-width: 2801px) {
   .content p {
     font-size: 4.25rem;
     line-height: 60px;
@@ -514,14 +514,12 @@ nav .visable li {
 @media all and (min-width: 1025px) {
   .service-content .services {
     margin: 0 auto;
-    max-width: 80%;
   }
 }
 
 @media all and (min-width: 1941px) {
   .service-content .services {
     margin: 0 auto;
-    max-width: 70%;
   }
 }
 
@@ -580,7 +578,6 @@ nav .visable li {
 
 .about-us {
   color: white;
-  min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -731,7 +728,7 @@ nav .visable li {
   .about-us p {
     margin: 0 auto;
     max-width: 80%;
-    padding: 0 1rem 3rem;
+    padding: 0 1rem 1rem;
   }
 }
 
