@@ -4,11 +4,13 @@ Designed by me. Still some work to do and things to think about.
 
 Main page todo:
 <!-- documentation -->
-mess with font sizes.
+<!-- mess with font sizes. -->
 <!-- fix the scss mess I made with functions an variables if needed. -->
-work out how to scale the font using mix and max and clamp.
-add hovers to all of the links.
-and active state to tabs.
+<!-- add hovers to all of the links. -->
+<!-- and active state to tabs. -->
 
 
 background image original here: https://unsplash.com/photos/v9FIx0J-KAA
+
+
+This should be complete
